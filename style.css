@@ -1,0 +1,66 @@
+:root {
+  --bg: #ffffff;
+  --fg: #05060e;
+  --muted: #5a5b63;
+  --line: #e7e7ec;
+  --accent: #1d3ba8;
+  --accent-hover: #133099;
+  --tint: #f2faff;
+  --band: #1d3ba8;
+  --band-fg: #ffffff;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #05060e;
+    --fg: #f3f3f3;
+    --muted: #a3a4ab;
+    --line: #212229;
+    --accent: #8ea4f2;
+    --accent-hover: #b3c2f7;
+    --tint: #0c1230;
+    --band: #133099;
+    --band-fg: #ffffff;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 17px/1.6 Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+header { background: var(--band); color: var(--band-fg); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; }
+.logo { display: inline-flex; color: var(--band-fg); }
+.logo svg { height: 32px; width: auto; display: block; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+nav a { color: var(--band-fg); opacity: .78; text-decoration: none; font-size: 15px; font-weight: 500; }
+nav a:hover, nav a[aria-current] { opacity: 1; }
+nav a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+main { padding: 44px 0 64px; }
+h1 { font-size: 36px; line-height: 1.15; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.02em; }
+h2 { font-size: 22px; line-height: 1.3; font-weight: 700; margin: 40px 0 10px; }
+h3 { font-size: 17px; font-weight: 500; margin: 24px 0 4px; }
+.lead { font-size: 20px; color: var(--muted); margin-top: 0; }
+.muted { color: var(--muted); font-size: 15px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+ul, ol { padding-left: 22px; }
+li { margin: 4px 0; }
+
+.card { background: var(--tint); border-left: 4px solid var(--accent); border-radius: 10px; padding: 6px 22px 14px; margin: 28px 0; }
+.card h2 { margin-top: 16px; }
+.lang { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 8px; }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; }
+footer p { margin: 2px 0; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 480px) {
+  h1 { font-size: 30px; }
+  .lead { font-size: 18px; }
+}
